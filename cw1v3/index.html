@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="description" content="An education website (Module: CST3145)"> <!-- site content description -->
+	<meta name="keywords" content="family, educational, learning"> <!-- define keywords that the search engine will search for -->
+	<meta name="author" content="Kurt Lee Camilleri [Middlesex Number: M00685836]"> <!-- site author -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- instructs the browser on how to control the page dimensions and scaling -->	
+
+	<!-- CSS file -->	
+	<link rel="stylesheet" href="style.css"/>	
+
+ 	 <!-- Web Fonts -->
+  	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/> <!-- Montserrat font -->
+  	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"/> <!-- Raleway font -->
+ 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/> <!-- Roboto font -->
+ 	<link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet"/> <!-- Rye font -->	
+
+	<!-- Vue references -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!-- Call Vue  -->
+
+	<!-- Vue devtools package/library fixes  -->
+	<script src="https://unpkg.com/vue@1.0.28/dist/vue.js"></script>
+	<script src="https://unpkg.com/vuex@1.0.1/dist/vuex.js"></script>
+
+
+ 	<!-- Tab icon -->
+ 	<link rel="icon" href="../cw1v3/assets/images/study-icon.png">
+ 	<!-- ICON AUTHOR CREDIT: <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+
+	<!-- Tab title/name -->
+ 	<title>Family Learning</title>
+</head>
+
+	<body>
+		<header>
+		</header>
+		<main>
+			<div id="loginreg" class="login-wrap">
+				<div class="login-register">
+					<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+					<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+					<div class="loginReg-form">
+						<form class="signin">
+							<div class="group">
+								<label for="user" class="label">Username</label>
+								<input id="user" type="text" class="input">
+							</div>
+							<div class="group">
+								<label for="pass" class="label">Password</label>
+								<input id="pass" type="password" class="input" data-type="password">
+							</div>
+							<div class="group">
+								<input id="check" type="checkbox" class="check" checked>
+								<label class="check-label" for="check"><span class="icon"></span> Keep me Signed in</label>								
+							</div>
+							<div class="group">
+								<button type="submit" v-on:click='onSubmit'>Sign In</button>								
+							</div>
+							<div class="linebreak"></div>
+
+							<div class="bottom-text">
+								<a href="#forgot">Forgot Password?</a>
+							</div>
+
+							<div class="linebreak"></div>
+
+							<div class="bottom-text">
+								<label for="tab-2"><span class="membercolor">Not a Member? Join Now!</span></a>
+							</div>				
+						</form>
+						<form class="signup">
+							<div class="group">
+								<label for="username" class="label">Username</label>
+								<input id="username" type="text" class="input" v-model="username" required="required">
+							</div>
+							<div class="group">
+								<label for="password" class="label">Password</label>
+								<input id="password" type="password" class="input" data-type="password" required>
+							</div>
+							<div class="group">
+								<label for="password" class="label">Repeat Password</label>
+								<input id="password" type="password" class="input" data-type="password" v-model="passwordrepeat" required="required">
+							</div>
+							<div class="group">
+								<label for="email" class="label">Email Address</label>
+								<input id="email" type="email" class="input"required>
+							</div>
+							<div class="group">
+								<button>Sign Up</button>
+							</div>
+							<div class="bottom-text">
+								<label for="tab-1"><span class="membercolor">Already a Member?</span></a>
+							</div>						
+						</form>
+					</div>
+				</div>
+			</div>	
+		</main>
+		<footer>
+		</footer>
+	</body>
+</html>
+
+
