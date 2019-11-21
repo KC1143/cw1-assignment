@@ -14,7 +14,7 @@ html, body{
 }
 
 body{
-  background: url("../cw1/assets/images/classroom.png") no-repeat center center fixed;
+  background: url("../cw1v1/assets/images/classroom.png") no-repeat center center fixed;
   background-size: cover;
   background-color: rgb(26, 26, 26);
 }
@@ -32,10 +32,10 @@ a.navbarLink, a.navLink, a.footnavLink{
   padding-right: 2px;
 }
 
-a.navbarLink:hover, a.navLink:hover, a.footnavLink:hover, a.navLink.active, a.navbarLink.active, a.footnavLink.active{
+a.navbarLink:hover, a.navLink:hover, a.footnavLink:hover, a.navbarLink.active, a.footnavLink.active{
   color: orange;
   font-weight: bolder;
-  text-shadow: darkorange 2px;
+  text-shadow: darkorange;
 }
 
 a.navbarLink:hover, a.navbarLink.active{
@@ -127,7 +127,7 @@ a.navbarLink:hover, a.navbarLink.active{
 }
 
 p.maintitle, p.maintext, p.pageReference{
-  font: 18px;
+  font-size: 18px;
   line-height: 1.15;
   padding: 5px;
 }
@@ -139,17 +139,13 @@ p.maintitle, p.maintext, p.pageReference{
   text-transform: uppercase;
 }
 
-.login-register .maintitle{
-  padding-bottom: 5px;
-}
-
 p.maintext{
-  font: 15px;
+  font-size: 15px;
   color: black;
 }
 
 .pageLink{
-  font: 14px;
+  font-size: 14px;
   font-style: italic; 
   text-decoration: none;
   color: #1a1a1a;
@@ -165,6 +161,10 @@ p.maintext{
 .grid-item {
   padding: 10px;
   text-align: center; 
+}
+
+#links a.grid-item.navLink.signin-up {
+  padding-left: 0;
 }
 
 .courseTitle{ 
@@ -268,7 +268,6 @@ footer{
  background: black;
 }
 
-
 /* tooltip (copyright) */
 .tooltip {
   display: grid;
@@ -277,6 +276,21 @@ footer{
   font-size: 15px;
   padding-top: 25px;
   font-weight: bold;
+}
+
+
+#allcourses{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  /*padding: 10px;*/
+  /*margin-bottom: 3px;*/
+  align-content: center;
+}
+
+ul.courselist{
+  list-style: none;/* set a margin space between each "courselist" */
+  padding: 25px; /* "courselist" box padding space */
 }
 
 
@@ -330,10 +344,29 @@ footer{
   display: none;
 }
 
+.linebreak{
+  padding-bottom: 10px;
+}
 
-.loginregister{
-  align-content: center;
-  position: relative;
+.membercolor:hover{
+  color: #02441e;
+}
+
+.successful{
+  color: #025123;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-top: 10px;
+  
+}
+
+.warning{
+  color: #760e08;
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
 }
 
 /* ----------- CONTACT FORM ----------- */ 
@@ -351,7 +384,7 @@ footer{
 }
 
 #contact-form{
-  background: rgb(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.5);
   padding: 25px;
   margin: 150px 0;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -430,100 +463,222 @@ button.contact-button:hover {
 
 /* ----------- Login/Register ----------- */ 
 
-form.register-login-form{
-  text-align: center;
+.login-wrap{
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
 }
 
-
-.login-register { 
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -150px 0 0 -150px;
-  width:300px;
-  height:300px;
+.login-register{
+  width:100%;
+  height:100%;
+  position:absolute;
+  padding:90px 70px 50px 70px;
 }
 
-.login-register h1 { 
-  text-shadow: 0 0 10px rgba(0,0,0,0.3); 
-  letter-spacing:1px; 
-  text-align: center; 
+.login-register .signin, .login-register .signup{
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  position:absolute;
+  transform:rotateY(180deg);
+  backface-visibility:hidden;
+  transition:all .4s linear;
 }
 
-
-.input-login-register{
-  padding: 10px;
-  width: 100%; 
-  margin-bottom: 10px; 
-  background: rgba(226, 226, 226, 0.29);
-  outline: none;
-  font-size: 13px;
-  color: black;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-  border: 1px solid rgba(0,0,0,0.3);
-  border-radius: 4px;
-  transition: box-shadow .5s ease;  
+.login-register .sign-in, .login-register .sign-up, .loginReg-form .check{
+  display:none;
 }
 
-
-.input-login-register:hover{
-  transition: border-color 0.2s ease-in-out;
-  border: 1px solid rgba(0, 0, 0, 0.8);
+.login-register .tab, .loginReg-form .label, .loginReg-form .button{
+  text-transform:uppercase;
 }
 
-.input-login-register:focus{
-  transition: border-color 0.2s ease-in-out;
-  border: 1px solid rgb(0, 34, 164);
+.login-register .tab{
+  font-size:22px;
+  padding-bottom:5px;
+  margin: 0 15px 10px 0;
+  display:inline-block;
+  border-bottom:2px solid transparent;
 }
 
+.login-register .sign-in:checked + .tab, .login-register .sign-up:checked + .tab{
+  color:rgba(0,0,0, 0.9);
+  font-weight: bold;
+  border-color:#1161ee;
+}
 
-.loginReg-form .label, .loginReg-form .input, .loginReg-form .button{
+.login-register .sign-in:not(:checked) + .tab, .login-register .sign-up:not(:checked) + .tab {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.login-register .sign-in:not(:checked):hover + .tab, .login-register .sign-up:not(:checked):hover + .tab {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.9);
+  border-color: rgba(17, 97, 238, 0.9);
+  transition: 0.1s ease-in-out;
+}
+
+.loginReg-form{
+  min-height: 345px;
+  position:relative;
+}
+
+.loginReg-form .group{
+  padding:10px;
+}
+
+.loginReg-form .label, .loginReg-form .input, .loginReg-form button{
   width:100%;
   display:block;
 }
 
-.input-login-register .input, .loginReg-form .button{
+.loginReg-form .input, .loginReg-form button{
   border:none;
   padding:15px 20px;
   margin-bottom: 1px;
   border-radius:10px;
 }
 
-.input-login-register .input{
+.loginReg-form .input{
   background:rgba(255,255,255,.3);
 }
 
-.input-login-register .input:hover{
+.loginReg-form .input:hover{
   transition: border-color 0.5s ease-in-out;
 }
 
+.loginReg-form .input:focus{
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid rgb(40, 81, 164);
+}
 
-
-.btn-login-register{
+.loginReg-form button{
   background: #105776;
   color: white;
   font-size: 15px;
-  border:none;
-  padding:15px 20px;
-  margin-bottom: 1px;
-  border-radius:10px;
 }
 
-.btn-login-register:hover{
+.loginReg-form button:hover{
   cursor: pointer;
   background: #665ebc;
   color: black;
   font-weight: bold;
 }
 
-.btn-block {
- width: 100%; 
- display:block;
+.loginReg-form .label{
+  color: black;
+  font-size: 13px;
+  font-weight: bold;
 }
+
+.loginReg-form label .icon{
+  width:15px;
+  height:15px;
+  border-radius:2px;
+  position:relative;
+  display:inline-block;
+  background:rgba(255,255,255,.5);
+}
+
+.loginReg-form label .icon:before, .loginReg-form label .icon:after{
+  content:'';
+  width:10px;
+  height:2px;
+  background: white;
+  font-weight: bold;
+  position:absolute;
+  transition:all .2s ease-in-out 0s;
+}
+
+.loginReg-form .group label .icon:before{
+  left:3px;
+  width:5px;
+  bottom:6px;
+  transform:scale(0) rotate(0);
+}
+
+.loginReg-form .group label .icon:after{
+  top:6px;
+  right:0;
+  transform:scale(0) rotate(0);
+}
+
+.loginReg-form .check:checked + label{
+  color: #105776;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.loginReg-form .check-label{
+  cursor: pointer;
+}
+
+.loginReg-form .group .check:checked + label .icon{
+  background:#1161ee;
+}
+
+.loginReg-form .group .check:checked + label .icon:before{
+  transform:scale(1) rotate(45deg);
+}
+
+.loginReg-form .group .check:checked + label .icon:after{
+  transform:scale(1) rotate(-45deg);
+}
+
+.login-register .sign-in:checked + .tab + .sign-up + .tab + .loginReg-form .signin{
+  transform:rotate(0);
+}
+
+.login-register .sign-up:checked + .tab + .loginReg-form .signup{
+  transform:rotate(0);
+}
+
+.bottom-text{
+  color: rgba(0, 0, 0, 0.7);
+  text-align:center;
+}
+
+.bottom-text a{
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.bottom-text a:hover, .bottom-text label:hover{
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+}
+
+
 
 
 /* ----------- SCALIBILITY ----------- */ 
 
+
+@media screen and (max-width: 1265px){
+  #allcourses {
+    grid-template-columns: auto auto auto;
+/*    padding: 25px 20%;*/
+  }
+
+  .grid-item{
+    text-align: center;
+  }
+
+  ul.courselist{
+   padding: 30px; /* "courselist" box padding space */
+  }
+}
+
+
+@media screen and (max-width: 942px){
+    #allcourses {
+    grid-template-columns: auto auto;
+  }
+}
 
 @media screen and (max-width: 715px){
   /* CSS Grid */
@@ -580,10 +735,38 @@ form.register-login-form{
     grid-template-columns: auto auto;
   }
 
-  .grid-item#course4, .grid-item#course5, .grid-item#course6{
-    padding-top: 10px;
-  }
 } 
+
+
+@media screen and (max-width: 507px){
+ #allcourses{
+  grid-template-columns: auto;
+  justify-content: center;
+  align-content: center;
+  align-items: center;  
+ }
+
+ .grid-item{
+  align-content: center;
+  align-items: center;
+ }
+
+  .courseTitle{ 
+    font-size: 25px;  
+  }
+
+  .coursedetails{
+    font-size: 20px;
+  }
+
+  .moreInfo{
+    font-size: 15px;
+  }
+
+  .joinCoursebtn{
+    font-size: 20px;
+  } 
+}
 
 
 @media screen and (max-width: 558px){

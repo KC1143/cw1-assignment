@@ -1,0 +1,618 @@
+
+*{
+  font-family:"Roboto", "Montserrat", "Raleway", monospace; /* Web  fonts */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body{
+  max-width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: url("../cw1-html/assets/images/classroom.png") no-repeat center center fixed;
+  background-size: cover;
+  background-color: rgb(26, 26, 26);
+}
+
+main{
+  min-height: 100%;
+  display: grid;
+}
+
+a.navbarLink, a.navLink, a.footnavLink{
+  font-size: 15px;
+  text-decoration: none;
+  color: white;
+  padding-top: 10px;
+  padding-right: 2px;
+}
+
+a.navbarLink:hover, a.navLink:hover, a.footnavLink:hover, a.navLink.active, a.navbarLink.active, a.footnavLink.active{
+  color: orange;
+  font-weight: bolder;
+  text-shadow: darkorange 2px;
+}
+
+a.navbarLink:hover, a.navbarLink.active{
+  margin: 0;
+}
+
+/* CSS Grid */
+#navbar, #footnav{
+  display: grid;
+  min-height: 60px;
+  grid-auto-flow: column;
+  background-color: black;
+  grid-gap: 10px; 
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 100%; 
+}
+
+/* CSS Grid */
+#links, #navlinks, #footerlinks, #socialmedia{
+  display: grid;
+  justify-content: end;
+  align-content: center;
+  grid-auto-flow: column;
+  grid-gap: 10px;
+  font-size: 20px; 
+}
+
+#navlinks{
+  margin-bottom: 10px;
+}
+
+#footerlinks{
+  justify-content: left;
+}
+
+
+#links{
+  margin-bottom: 10px;
+}
+
+/* CSS Grid */
+#logoDiv{
+  display: grid;
+  justify-content: start;
+  align-content: center;
+}
+
+#logo{
+  font-family:"Rye", "Montserrat", "Roboto", monospace;  /* Web  fonts */
+  font-size: 21px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+#logo:hover{
+  cursor: pointer;
+}
+
+
+/* CSS Grid */
+/*.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  margin-bottom: 3px;
+}*/
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  margin-bottom: 3px;
+}
+
+/* CSS Grid */
+.footergrid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+}
+
+.homegrid-container{
+  display: grid;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+}
+
+.homegrid-item{
+  text-align: left;
+  padding: 10px;
+}
+
+p.maintitle, p.maintext, p.pageReference{
+  font: 18px;
+  line-height: 1.15;
+  padding: 5px;
+}
+
+.maintitle{
+  font-family: "Montserrat", "Roboto", "Raleway", monospace; /* Web  fonts */  
+  color: #001a33;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.login-register .maintitle{
+  padding-bottom: 5px;
+}
+
+p.maintext{
+  font: 15px;
+  color: black;
+}
+
+.pageLink{
+  font: 14px;
+  font-style: italic; 
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+.pageLink:hover{
+  color: #00001a;
+  font-weight: bold; 
+}
+
+
+/* CSS Grid */
+.grid-item {
+  padding: 10px;
+  text-align: center; 
+}
+
+.courseTitle{ 
+  font-family: "Montserrat", "Roboto", "Raleway", monospace; /* Web  fonts */    
+  font-size: 22px;
+  color: #001a33;
+  font-weight: bold;
+  margin: 0;
+  padding-bottom: 10px;
+  text-transform: uppercase; 
+}
+
+.coursedetails{
+  font-size: 18px;
+  color: #1a1a1a;
+  font-weight: bold;
+  margin: 0; 
+  padding-bottom: 10px;   
+}
+
+.moreInfo{
+  margin: 0; 
+  padding-bottom: 10px; 
+}
+
+a.infoLink{
+  text-decoration: none;
+  color: #262626;
+  font-weight: bold;
+  font-size: 16px;  
+}
+
+a.infoLink:hover{
+  cursor: pointer;
+  color: black;
+  font-weight: bolder;
+}
+
+
+.infoLink:hover::after{
+  content: ">";
+}
+
+.joinCoursebtn{
+  font-size: 18px;
+  margin: 0;
+  border-radius: 10px;
+  padding: 5px;
+  color: white;
+  background: #7433ff;
+
+}
+
+.joinCoursebtn:hover{
+  cursor: pointer;
+  background: #18004d;
+  font-weight: bold;
+}
+
+.navicon{
+  padding-top: 5px; 
+} 
+
+#searchButton{
+  padding-top: 2px;
+
+}
+
+#search{
+  width: 85%;
+  height: 65%;
+  padding: 3px;
+  margin-right: 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: lightgrey;
+}
+
+#searchBtn{
+  padding-top: 5px;
+  margin-top: -4px;
+  border: none;
+  background: transparent; 
+}
+
+#searchIcon{
+  margin-top: 3px;
+  margin-left: -4px; 
+}
+
+#searchIcon:hover{
+  cursor: pointer;
+}
+
+.navbar .search-container button:hover{
+  background: #ccc;
+}
+
+
+footer{
+ background: black;
+}
+
+
+/* tooltip (copyright) */
+.tooltip {
+  display: grid;
+  justify-content: center;
+  color: darkorange;
+  font-size: 15px;
+  padding-top: 25px;
+  font-weight: bold;
+}
+
+
+.user-dropdown {
+  overflow: hidden;
+}
+
+.user-dropdown .dropbtn {
+  font-size: 13px;  
+  border: none;
+  outline: none;
+  padding-top: 8px;
+  padding-right: 10px;
+  background-color: transparent;
+  font-family: inherit;
+  margin: 0;
+}
+
+.user-dropdown:hover .dropbtn {
+  cursor: pointer;
+}
+
+.drop-signin-up {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  background-color: black;
+  max-width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.drop-signin-up a {
+  float: none;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.drop-signin-up a:hover {
+  color: orange;
+}
+
+.user-dropdown:hover .drop-signin-up {
+  display: block;
+}
+
+.user-dropdown{
+  display: none;
+}
+
+
+.loginregister{
+  align-content: center;
+  position: relative;
+}
+
+/* ----------- CONTACT FORM ----------- */ 
+
+
+.contact-container{
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+#contact-form .contactformIput{
+  font-size: 12px;
+}
+
+#contact-form{
+  background: rgb(255, 255, 255, 0.5);
+  padding: 25px;
+  margin: 150px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#contact-form .maintitle{
+  display: block;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#contact-form fieldset{
+  border: medium none;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#contact-form .contactformIput{
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+#contact-form .contactformIput:hover{
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+#contact-form .contactformIput:focus{
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid rgb(40, 81, 164);
+}
+
+#contact-form textarea{
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+button.contact-button{
+  width: 100%;
+  border: none;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-transform: uppercase;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 15px;
+}
+
+button.contact-button:hover {
+  cursor: pointer;  
+  background: black;
+  color: white;  
+  font-weight: bold;
+  transition: 0.1s ease-in-out;
+}
+
+#contact-form .contact-button:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.copyright {
+  text-align: center;
+}
+
+
+
+/* ----------- Login/Register ----------- */ 
+
+form.register-login-form{
+  text-align: center;
+}
+
+
+.login-register { 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -150px 0 0 -150px;
+  width:300px;
+  height:300px;
+}
+
+.login-register h1 { 
+  text-shadow: 0 0 10px rgba(0,0,0,0.3); 
+  letter-spacing:1px; 
+  text-align: center; 
+}
+
+
+.input-login-register{
+  padding: 10px;
+  width: 100%; 
+  margin-bottom: 10px; 
+  background: rgba(226, 226, 226, 0.29);
+  outline: none;
+  font-size: 13px;
+  color: black;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 4px;
+  transition: box-shadow .5s ease;  
+}
+
+
+.input-login-register:hover{
+  transition: border-color 0.2s ease-in-out;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.input-login-register:focus{
+  transition: border-color 0.2s ease-in-out;
+  border: 1px solid rgb(0, 34, 164);
+}
+
+
+.loginReg-form .label, .loginReg-form .input, .loginReg-form .button{
+  width:100%;
+  display:block;
+}
+
+.input-login-register .input, .loginReg-form .button{
+  border:none;
+  padding:15px 20px;
+  margin-bottom: 1px;
+  border-radius:10px;
+}
+
+.input-login-register .input{
+  background:rgba(255,255,255,.3);
+}
+
+.input-login-register .input:hover{
+  transition: border-color 0.5s ease-in-out;
+}
+
+
+
+.btn-login-register{
+  background: #105776;
+  color: white;
+  font-size: 15px;
+  border:none;
+  padding:15px 20px;
+  margin-bottom: 1px;
+  border-radius:10px;
+}
+
+.btn-login-register:hover{
+  cursor: pointer;
+  background: #665ebc;
+  color: black;
+  font-weight: bold;
+}
+
+.btn-block {
+ width: 100%; 
+ display:block;
+}
+
+
+/* ----------- SCALIBILITY ----------- */ 
+
+
+@media screen and (max-width: 715px){
+  /* CSS Grid */
+  .footergrid-container {
+    grid-template-columns: auto;
+  }
+
+  /* CSS Grid */
+  #links, #navlinks, #footerlinks, #socialmedia, .tooltip{ 
+    justify-content: center;
+    align-content: center;
+  }  
+
+  .tooltip{
+    padding-top: 10px;
+  }
+}
+
+@media screen and (max-width: 633px){
+
+
+/* CSS Grid */
+  div.navbar{
+    grid-template-columns: 100px 10px;
+  }
+
+  a.navbarLink, a.navLink{
+    font-size: 14px;
+  }
+
+  #logo{
+    font-size: 20px;
+    padding-right: 7px;
+  }
+
+  .courseTitle{ 
+    font-size: 20px;  
+  }
+
+  .coursedetails{
+    font-size: 15px;
+  }
+
+  .moreInfo{
+    font-size: 10px;
+  }
+
+  .joinCoursebtn{
+    font-size: 15px;
+  }
+
+/* CSS Grid */
+  .grid-container {
+    grid-template-columns: auto auto;
+  }
+
+  .grid-item#course4, .grid-item#course5, .grid-item#course6{
+    padding-top: 10px;
+  }
+} 
+
+
+@media screen and (max-width: 558px){
+  #search{
+    width: 80%;
+  }
+
+  #navbar{
+    padding-right: 10px;
+  }
+
+  .signin-up{
+    display: none;
+  }
+
+  .user-dropdown{
+    display: initial;
+  }
+}
+
+
+

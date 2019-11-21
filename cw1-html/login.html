@@ -16,16 +16,13 @@
 	 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/> <!-- Roboto font -->
 	 	<link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet"/> <!-- Rye font -->	
 
-
 	 	<!-- Tab icon -->
-	 	<link rel="icon" href="../cw1/assets/images/study-icon.png">
+	 	<link rel="icon" href="../cw1-html/assets/images/study-icon.png">
 	 	<!-- ICON AUTHOR CREDIT: <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
 
 		<!-- Tab title/name -->
-	 	<title>Family Learning | Contact</title>
+	 	<title>Family Learning | Log In</title>
 	</head>
-
-	<body>
 		<header>
 			<div id="navbar"> <!-- CSS Grid for Main Navigation Bar -->
 				<div id="logoDiv"> <!-- Site Logo/Name -->
@@ -38,20 +35,20 @@
 						<!-- Search Bar -->
 			            <form class="searchButton" action="#">
 			              <input id="search" type="text" placeholder="Search..." title=" Content to be Searched">
-			              <button id="searchBtn" type="submit"><img id="searchIcon" src="../cw1/assets/images/search.png" title="Search" alt="Search"></button>            
+			              <button id="searchBtn" type="submit"><img id="searchIcon" src="../cw1-html/assets/images/search.png" title="Search" alt="Search"></button>            
 			            </form>					
-						<a class="grid-item navLink signin-up" href="./login.html" title="Already have an Account?">Sign In</a> <!-- Sign In page -->
+						<a class="grid-item navLink signin-up active" href="./login.html" title="Already have an Account?">Sign In</a> <!-- Sign In page -->
 						<a class="grid-item navLink signin-up" href="./register.html" title="Register Now!">Sign Up</a> <!-- Registration page -->
 
 						<div class="user-dropdown">
-						    <button class="dropbtn"><img id="userIcon" src="../cw1/assets/images/user-icon.png" title="User Accounts" alt="User"></button>						
+						    <button class="dropbtn"><img id="userIcon" src="../cw1-html/assets/images/user-icon.png" title="User Accounts" alt="User"></button>						
 						    <div class="drop-signin-up">
-								<a class="grid-item navLink" href="./login.html" title="Already have an Account?">Sign In</a> <!-- Sign In page -->
+								<a class="grid-item navLink active" href="./login.html" title="Already have an Account?">Sign In</a> <!-- Sign In page -->
 								<a class="grid-item navLink" href="./register.html" title="Register Now!">Sign Up</a> <!-- Registration page -->
 						    </div>	
 						</div>		
 										    					
-						<a class="navicon" href="#" target="_blank"><img id="cart" src="../cw1/assets/images/cart-icon.png" alt="Cart" title="Cart"/></a>	<!-- Cart page -->		
+						<a class="navicon" href="#" target="_blank"><img id="cart" src="../cw1-html/assets/images/cart-icon.png" alt="Cart" title="Cart"/></a>	<!-- Cart page -->		
 					</div>
 
 
@@ -62,34 +59,23 @@
 						<a class="navbarLink" href="./about.html" title="About page">About</a> <!-- About page -->
 						<a class="navbarLink" href="./courses.html" title="Courses page">Courses</a> <!-- Courses page -->
 						<a class="navbarLink" href="./activities.html" title="Activities page">Activities</a> <!-- Activities page -->					
-						<a class="navbarLink active" href="./contact.html" title="Contact page">Contact</a> <!-- Contact page -->
+						<a class="navbarLink" href="./contact.html" title="Contact page">Contact</a> <!-- Contact page -->
 					</div>					
 				</div>
 
 			</div>
 		</header>
-		<main>
-			<div class="contact-container">  
-			  <form id="contact-form" action="#" method="post">
-			    <h1 class="maintitle">Contact Form</h1>
-			    <fieldset>
-			      <input class="contactformIput" placeholder="Your name" type="text" tabindex="1" required>
-			    </fieldset>
-			    <fieldset>
-			      <input class="contactformIput" placeholder="Your Email Address" type="email" tabindex="2" required>
-			    </fieldset>
-			    <fieldset>
-			      <input class="contactformIput" placeholder="Your Phone Number (optional)" type="tel" tabindex="3" required>
-			    </fieldset>
-			    <fieldset>
-			      <textarea class="contactformIput" placeholder="Type your message here...." tabindex="4" required></textarea>
-			    </fieldset>
-			    <fieldset>
-			      <button class="contact-button" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-			    </fieldset>
-			  </form>
-			</div>	
-		</main>
+	<main class="loginregister">
+		<div class="login-register">
+		    <h1 class="maintitle">Login</h1>
+		    <form class="register-login-form" method="#">
+		        <input class="input-login-register" type="text" name="username" placeholder="Username" required="required" />
+		        <input class="input-login-register" type="email" name="email" placeholder="EmailAddress" required="required" />        
+		        <input class="input-login-register" type="password" name="password" placeholder="Password" required="required" />
+		        <button type="submit" class="btn-login-register">Log In</button>
+		    </form>
+		</div>
+	</main>	
 		<footer>
 			<div id="footnav">
 				<div class="footergrid-container"> <!-- CSS Grid for footer Navigation Bar links -->			
@@ -98,7 +84,7 @@
 						<a class="footnavLink" href="./about.html" title="About page">About</a> <!-- About page -->
 						<a class="footnavLink" href="./courses.html" title="Courses page">Courses</a> <!-- Courses page -->
 						<a class="footnavLink" href="./activities.html" title="Activities page">Activities</a> <!-- Activities page -->					
-						<a class="footnavLink active" href="./contact.html" title="Contact page">Contact</a> <!-- Contact page -->
+						<a class="footnavLink" href="./contact.html" title="Contact page">Contact</a> <!-- Contact page -->
 					</div>	
 		
 					<div class="copyright"> <!-- material copyright -->
@@ -106,14 +92,11 @@
                     </div> 	
 
 					<div id="socialmedia">	<!-- social media links -->				
-						<a class="footnavLink" href="https://www.facebook.com" target="_blank"><img id="fbLogo" src="../cw1/assets/images/fb-logo.png" alt="Facebook" title="Facebook"/></a>
-						<a class="footnavLink" href="https://twitter.com/?lang=en" target="_blank"><img id="twitterLogo" src="../cw1/assets/images/twitter-logo.png" alt="Twitter" title="Twitter"/></a>
-						<a class="footnavLink" href="https://www.linkedin.com/" target="_blank"><img id="linkedinLogo" src="../cw1/assets/images/linkedin-logo.png" alt="LinkedIn" title="LinkedIn"/></a>
+						<a class="footnavLink" href="https://www.facebook.com" target="_blank"><img id="fbLogo" src="../cw1-html/assets/images/fb-logo.png" alt="Facebook" title="Facebook"/></a>
+						<a class="footnavLink" href="https://twitter.com/?lang=en" target="_blank"><img id="twitterLogo" src="../cw1-html/assets/images/twitter-logo.png" alt="Twitter" title="Twitter"/></a>
+						<a class="footnavLink" href="https://www.linkedin.com/" target="_blank"><img id="linkedinLogo" src="../cw1-html/assets/images/linkedin-logo.png" alt="LinkedIn" title="LinkedIn"/></a>
 					</div>							
 				</div>				
 			</div>
-		</footer>
-	</body>
-</html>
-
-
+		</footer>		
+	</main>	
