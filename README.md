@@ -9,3 +9,5 @@
 # cw1v3 -> project restructure | vue arrays
 
 # cw1v4 -> registration update
+
+# cw1v5 -> Search classes &/or activities
