@@ -25,7 +25,7 @@
 
 
  	<!-- Tab icon -->
- 	<link rel="icon" href="../cw1v4/assets/images/study-icon.png">
+ 	<link rel="icon" href="../cw1/assets/images/study-icon.png">
  	<!-- ICON AUTHOR CREDIT: <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
 
 	<!-- Tab title/name -->
@@ -74,7 +74,7 @@
 
 							<p id="successfulRegister" class="successful"></p>
 
-							<p id="usernamerequired" class="warning"></p>	
+							<p id="usernamerequired" class="warningsign"></p>	
 							<div class="group">
 								<label for="username" class="label">Username</label>
 								<input id="username" type="text" class="input" v-model="username" required="required" minlength="1 character">									
@@ -82,7 +82,7 @@
 
 
 
-							<p id="emailrequired" class="warning"></p>
+							<p id="emailrequired" class="warningsign"></p>
 							<div class="group">
 								<label for="email" class="label">Email Address</label>
 								<input id="email" type="email" class="input" v-model="email" required>			
@@ -90,20 +90,15 @@
 							
 
 
-							<p id="passwordrequired" class="warning"></p>	
+							<p id="passwordrequired" class="warningsign"></p>	
 							<div class="group">
 								<label for="password" class="label">Password</label>
 								<input id="password" type="password" class="input" data-type="password" v-model="password" required minlength="10 characters">				
 							</div>							
 
-							
-<!-- 							<div class="group">
-								<label for="password" class="label">Repeat Password</label>
-								<input id="password" type="password" class="input" data-type="password" v-model="passwordrepeat" required="required">
-							</div> -->
 
 
-						<p id="rolerequired" class="warning"></p>
+						<p id="rolerequired" class="warningsign"></p>
 						<div class="group">
 								<label for="role" class="label">Role</label>
 								<select class="input" id="role" v-model="role" required>
@@ -265,9 +260,60 @@
 					alert("Registration Complete. Welcome to the Community.");
 					document.getElementById("successfulRegister").innerHTML = "Registration Complete";
 					this.$router.push("/index.html");
-				}	
-			}		    
-		});   
+				},
+
+			setAuthUser: function(){
+				localStorage.removeItem("AuthUser");
+				localStorage.setItem("AuthUser", JSON.stringify(this.AuthUser));
+			},
+
+			checkUser: function(){
+				this.input.email.toLowerCase().trim();
+				var userpassword = this.input.password;
+
+				if(localStorage.getItem("Users")){
+					try{
+						this.Users = JSON.parse(localStorage.getItem("Users"));
+					} catch(e){useremail
+						localStorage.removeItem("Users");
+					}
+				}
+
+				var counter = 0;
+				for(counter = 0; counter < this.Users.length; counter++){
+					if(useremail.toLowerCase().trim() == this.Users[counter].email.toLowerCase().trim()){
+						if (userpassword == this.Users[counter].password){
+							this.AuthUser.push({
+								username: this.Users[counter].username,
+								email: this.Users[counter].email.toLowerCase().trim(),
+								role: this.Users[counter].role
+							});
+							return true;
+						}
+					}
+				}
+				
+				return false;				
+			},
+
+
+			Login: function(){
+				if(this.email.toLowerCase().trim() != "" && this.input.password != ""){
+					if(this.checkUser() == true){
+						this.setAuthUser();
+						this.$emit("authenticated", true);
+						alert("Sign In successful");
+						this.$router.push("Home");												
+					}else{
+						alert("The Username and/or Password is incorrect");
+					}
+				}else {
+						alert("Input your Username and Password");						
+					}
+			},
+
+		},
+		});   				 
 	</script>		
 </html>
 

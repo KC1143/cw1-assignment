@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="description" content="An education website (Module: CST3145)"> <!-- site content description -->
+	<meta name="keywords" content="family, educational, learning"> <!-- define keywords that the search engine will search for -->
+	<meta name="author" content="Kurt Lee Camilleri [Middlesex Number: M00685836]"> <!-- site author -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- instructs the browser on how to control the page dimensions and scaling -->	
+
+	<!-- CSS file -->	
+	<link rel="stylesheet" href="style.css"/>	
+
+ 	 <!-- Web Fonts -->
+  	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/> <!-- Montserrat font -->
+  	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"/> <!-- Raleway font -->
+ 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/> <!-- Roboto font -->
+ 	<link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet"/> <!-- Rye font -->	
+
+	<!-- Vue references -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!-- Call Vue  -->
+
+	<!-- Vue devtools package/library fixes  -->
+	<script src="https://unpkg.com/vue@1.0.28/dist/vue.js"></script>
+	<script src="https://unpkg.com/vuex@1.0.1/dist/vuex.js"></script>
+
+
+ 	<!-- Tab icon -->
+ 	<link rel="icon" href="../cw1/assets/images/study-icon.png">
+ 	<!-- ICON AUTHOR CREDIT: <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+
+	<!-- Tab title/name -->
+ 	<title>Family Learning | Activities</title>
+</head>
+
+	<body id="coursebody">
+		<header>
+			<div id="navbar"> <!-- CSS Grid for Main Navigation Bar -->
+				<div id="logoDiv"> <!-- Site Logo/Name -->
+					<h1><a id="logo" href="./home.html" title="">Family Learning</a></h1>
+				</div>
+
+				<div class="navgrid-container"> <!-- CSS Grid for header Navigation Bar links -->
+
+					<div id="links"> <!-- 1st Level links (Search; Sign In; Sign Up) -->
+						<!-- Search Bar -->
+			            <form class="searchButton" action="#">
+			              <input id="search" type="text" v-model = "search" placeholder="Search..." title=" Content to be Searched">
+			              <button id="searchBtn" type="submit"><img id="searchIcon" src="../cw1/assets/images/search.png" title="Search" alt="Search"></button>            
+			            </form>					
+						<a class="grid-item navLink signin-up" href="./index.html" title="Sign Out">Sign Out</a> <!-- Sign Out -->
+
+						<div class="user-dropdown">
+						    <button class="dropbtn"><img id="userIcon" src="../cw1/assets/images/user-icon.png" title="User Accounts" alt="User"></button>						
+						    <div class="drop-signin-up">
+								<a class="grid-item navLink" href="./index.html" title="Sign Out">Sign Out</a>  <!-- Sign Out -->
+						    </div>	
+						</div>		
+										    					
+						<a class="navicon" href="#" target="_blank"><img id="cart" src="../cw1/assets/images/cart-icon.png" alt="Cart" title="Cart"/></a>	<!-- Cart page -->		
+					</div>
+
+					<div id="navlinks">	<!-- 2nd Level (main) links (Home; About; Courses; Activities; Contact) -->				
+						<a class="navbarLink" href="./home.html" title="Home page">Home</a> <!-- Home page -->
+						<a class="navbarLink" href="./about.html" title="About page">About</a> <!-- About page -->
+						<a class="navbarLink" href="./courses.html" title="Courses page">Courses</a> <!-- Courses page -->
+						<a class="navbarLink active" href="./activities.html" title="Activities page">Activities</a> <!-- Activities page -->					
+						<a class="navbarLink" href="./contact.html" title="Contact page">Contact</a> <!-- Contact page -->
+					</div>					
+				</div>
+			</div>
+		</header>
+		<main>
+			<div class="grid-container"> <!-- CSS Grid for the main content -->		
+
+			   <div id="allcourses" class="grid-item"> <!-- CSS Grid Item for Course 6 -->		
+
+				<p v-if="!topics.length" class="info">There are <span class="bold warning caps">No Courses</span> at this time</p>  
+
+					<ul class="courselist" v-for="activity in topics" v-bind:key="activity">
+					  <li  class="courseTitle"> {{ activity.topic }} </li> <!-- activity topic -->
+					  <li  class="coursedetails">{{ activity.tutor }} </li> <!-- activity tutor -->						  
+					  <li  class="coursedetails">{{ activity.location }} </li> <!-- activity location -->
+					  <li  class="coursedetails"> {{ activity.day }} @ {{activity.time}} [{{ activity.duration }} hour(s)] </li> <!-- activity time & duration -->	
+					  <li  class="coursedetails"> €{{ activity.price }} </li> <!-- activity price -->					  					  				  	
+					  	<p class="moreInfo"><a class="infoLink" href="#">More Info ></a></p> <!-- More Info on the Course -->
+						<button class="joinCoursebtn" type="button">Join Course</button> <!-- Join Course button -->					  
+					</ul>	 	  	
+				</div>
+
+				<div class="addinput">
+					<div class="contact-container">  
+					  <form id="contact-form" action="#" method="post">
+					    <h1 class="maintitle">Add Activity Form</h1>
+					    <fieldset>
+						  <label for="inputtopic" class="label">Topic</label>
+					      <input id="inputtopic" class="contactformIput" placeholder="Class Name" v-model="newTopic"  type="text" tabindex="1" required>
+					    </fieldset>
+						  <label for="inputtutor" class="label">Tutor</label>
+					      <input id="inputtutor" class="contactformIput" placeholder="Class Lecturer" v-model="newTutor"  type="text" tabindex="2" required>
+					    </fieldset>
+						  <label for="inputlocation" class="label">Location</label>
+					      <input id="inputlocation" class="contactformIput" placeholder="Class Location" v-model="newLocation"  type="text" tabindex="3" required>
+					    </fieldset>
+						  <label for="inputtime" class="label">Day</label>
+					      <input id="inputtime" class="contactformIput" placeholder="Wednesday" v-model="newDay" type="day" tabindex="4" required>
+					    </fieldset>
+						  <label for="inputday" class="label">Time</label>
+					      <input id="inputday" class="contactformIput" placeholder="15:00" v-model="newTime"  type="Time" min="08:00" max="20:00" tabindex="4" required>
+					    </fieldset>					    
+				    	</fieldset>
+						  <label for="inputduration" class="label">Duration</label>
+					      <input id="inputduration" class="contactformIput" placeholder="Class Duration (in hours)" v-model="newDuration" type="Number" min="1" tabindex="5" required>
+					    </fieldset>
+				   		</fieldset>
+						  <label for="inputprice" class="label">Price</label>
+					      <input id="inputprice" class="contactformIput" placeholder="Class Price" v-model="newPrice"  type="Number" min="1" tabindex="6" required>
+					    </fieldset>				    				    
+					    <fieldset>
+					      <button class="contact-button" name="submit" type="" id="contact-submit" data-submit="...Sending" v-on:click="addCourse">Add</button>
+					    </fieldset>
+					  </form>
+					</div>	
+
+<!-- 
+					<input id="inputclassname" class="new-todo" v-model="newTodo" v-on:keyup.enter="addTodo" placeholder="What needs to be done?" autofocus/> -->									
+				</div>	
+<!-- 				<ul class="todo-list">
+					<li v-for="todo in filteredTodos"
+						:class="{ completed: todo.completed, editing: todo == editedTodo}">
+						<div class="view">
+								<input class="toggle" type="checkbox" v-model="todo.completed" />
+								<label @dblclick="editTodo(todo)">{{ todo.title }}</label>
+								<button class="destroy" @click="removeTodo(todo)"></button>
+						</div>
+
+
+						<input class="edit" type="text" v-model="todo.title" v-on:keyup.enter="doneEdit(todo)" />
+					</li>
+				</ul>	 -->			
+
+
+			</div>		
+		</main>
+		<footer>
+			<div id="footnav">
+				<div class="footergrid-container"> <!-- CSS Grid for footer Navigation Bar links -->			
+					<div id="footerlinks">	<!-- Footer Navigation links -->				
+						<a class="footnavLink" href="./home.html" title="Home page">Home</a> <!-- Home page -->
+						<a class="footnavLink" href="./about.html" title="About page">About</a> <!-- About page -->
+						<a class="footnavLink" href="./courses.html" title="Courses page">Courses</a> <!-- Courses page -->
+						<a class="footnavLink active" href="./activities.html" title="Activities page">Activities</a> <!-- Activities page -->					
+						<a class="footnavLink" href="./contact.html" title="Contact page">Contact</a> <!-- Contact page -->
+					</div>	
+		
+					<div class="copyright"> <!-- material copyright -->
+	                    <p class="footnavLink tooltip"> &copy; 2019 Family Learning Ltd</p>
+                    </div> 	
+
+					<div id="socialmedia">	<!-- social media links -->				
+						<a class="footnavLink" href="https://www.facebook.com" target="_blank"><img id="fbLogo" src="../cw1/assets/images/fb-logo.png" alt="Facebook" title="Facebook"/></a>
+						<a class="footnavLink" href="https://twitter.com/?lang=en" target="_blank"><img id="twitterLogo" src="../cw1/assets/images/twitter-logo.png" alt="Twitter" title="Twitter"/></a>
+						<a class="footnavLink" href="https://www.linkedin.com/" target="_blank"><img id="linkedinLogo" src="../cw1/assets/images/linkedin-logo.png" alt="LinkedIn" title="LinkedIn"/></a>
+					</div>							
+				</div>				
+			</div>
+		</footer>
+	</body>
+	<script>			
+	  	new Vue ({ // 'new Vue' instance
+		    el: '#coursebody', // call the HTML element/div with the id "classes" to link to the Vue instance
+		    data: function(){
+		      return {
+		      // "courses" array containing all the course information data provided
+		        activities: [
+						{ 'topic': 'Handball', 'tutor': 'Jack Holmes', 'location': 'Fitness Central', 'price': 100.00, 'time': '14:00',  'day': 'Saturday', 'duration': '1 hour'},
+						{ 'topic': 'Water Polo', 'tutor': 'Daniel Phillips', 'location': 'National Pool', 'price': 80.00, 'time': '09:00',  'day': 'Saturday', 'duration': '1 hour'},
+						{ 'topic': 'Kickboxing', 'tutor': 'Martial Lawrence', 'location': 'Freedom Stadium', 'price': 100.00, 'time': '16:00',  'day': 'Friday', 'duration': '1 hour'},	
+						{ 'topic': 'Arts & Crafts', 'tutor': 'Cristina Arturo', 'location': 'Art Centre', 'price': 70.00, 'time': '10:00',  'day': 'Saturday', 'duration': '1.5 hours'}			
+					],
+
+			      search: '',
+		    	};
+		    },	
+
+
+			computed: {
+
+				topics: function(){
+					return this.activities.filter((activity) => {
+						return activity.topic.toLowerCase().match(this.search.toLowerCase());
+					});
+				},			
+		  	},
+
+		  methods: {
+				addCourse: function() {
+		          this.activities.push({ //push new elements into the "tasks" array
+		          //add next task
+			          topic: this.newTopic, //add new activity topic to the list
+			          tutor: this.newTutor, //add new activity tutor to the list
+			          location: this.newLocation, //add new activity location to the list		
+			          time: this.newTime, //add new activity time to the list
+			          day: this.newDay, //add new activity time to the list
+			          duration: this.newDuration, //add new activity duration to the list	
+			          price: this.newPrice, //add new activity price to the list			         		          			          	          
+			       });
+
+
+			       this.newTopic = null; // placeholder value is nullified/cleared
+			       this.newTutor = null; // placeholder value is nullified/cleared
+			       this.newLocation = null; // placeholder value is nullified/cleared
+			       this.newTime = null; // placeholder value is nullified/cleared
+				   this.newDay = null; // placeholder value is nullified/cleared			       
+			       this.newDuration = null; // placeholder value is nullified/cleared
+			       this.newPrice = null; // placeholder value is nullified/cleared
+
+				},
+		 	}		  		  	    	
+		});   
+	</script>		
+</html>
+
+

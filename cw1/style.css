@@ -14,7 +14,7 @@ html, body{
 }
 
 body{
-  background: url("../cw1v1/assets/images/classroom.png") no-repeat center center fixed;
+  background: url("../cw1/assets/images/classroom.png") no-repeat center center fixed;
   background-size: cover;
   background-color: rgb(26, 26, 26);
 }
@@ -101,11 +101,11 @@ a.navbarLink:hover, a.navbarLink.active{
 /* CSS Grid */
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
+  /*grid-template-columns: auto auto auto;*/
   grid-gap: 10px;
   padding-left: 10px;
   padding-top: 10px;
-  margin-bottom: 3px;
+  margin-bottom: 3px; 
 }
 
 /* CSS Grid */
@@ -283,9 +283,7 @@ footer{
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-gap: 10px;
-  /*padding: 10px;*/
-  /*margin-bottom: 3px;*/
-  align-content: center;
+  justify-content: center;
 }
 
 ul.courselist{
@@ -357,16 +355,17 @@ ul.courselist{
   font-size: 20px;
   text-align: center;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: bolder;
   padding-top: 10px;
+  display: none;
   
 }
 
-.warning{
+.warningsign{
   color: #760e08;
   font-size: 15px;
   text-align: center;
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 /* ----------- CONTACT FORM ----------- */ 
@@ -530,6 +529,15 @@ button.contact-button:hover {
   padding:10px;
 }
 
+.input{
+  font-size: 17px;
+}
+
+option.roleoption{
+  background: rgba(190, 179, 153, 0.9);
+  color: black;
+}
+
 .loginReg-form .label, .loginReg-form .input, .loginReg-form button{
   width:100%;
   display:block;
@@ -543,7 +551,7 @@ button.contact-button:hover {
 }
 
 .loginReg-form .input{
-  background:rgba(255,255,255,.3);
+  background:rgba(255,255,255,0.3);
 }
 
 .loginReg-form .input:hover{
@@ -639,6 +647,7 @@ button.contact-button:hover {
 .bottom-text{
   color: rgba(0, 0, 0, 0.7);
   text-align:center;
+  margin-bottom: 10px;
 }
 
 .bottom-text a{
@@ -653,9 +662,30 @@ button.contact-button:hover {
 }
 
 
+.info, .bold, .warning{
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  justify-content: center;
+}
 
+.info{
+    padding: 10px;
+}
 
-/* ----------- SCALIBILITY ----------- */ 
+.bold{
+  font-weight: bold;
+}
+
+.warning{
+  color: maroon;
+}
+
+.caps{
+  text-transform: uppercase;
+}
+
+/* ----------- SCALABILITY ----------- */
 
 
 @media screen and (max-width: 1265px){
@@ -732,7 +762,7 @@ button.contact-button:hover {
 
 /* CSS Grid */
   .grid-container {
-    grid-template-columns: auto auto;
+    /*grid-template-columns: auto auto;*/
   }
 
 } 
