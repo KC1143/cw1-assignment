@@ -7,3 +7,5 @@
 # cw1v2 -> activities and courses vue array
 
 # cw1v3 -> project restructure | vue arrays
+
+# cw1v4 -> registration update
